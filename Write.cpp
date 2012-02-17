@@ -14,5 +14,5 @@ Write::~Write(void)
 }
 void Write::opFunc()
 {
-	cout << "Im a Write"<<endl;
+	cout << "Im a Write";
 }

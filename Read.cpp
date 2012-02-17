@@ -13,5 +13,5 @@ Read::~Read(void)
 }
 void Read::opFunc()
 {
-	cout << "I'm a Read"<<endl;
+	cout << "Im a Read";
 }

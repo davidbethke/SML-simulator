@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Add.h" />
+    <ClInclude Include="AllInstructions.h" />
     <ClInclude Include="Branch.h" />
     <ClInclude Include="BranchNeg.h" />
     <ClInclude Include="BranchZero.h" />

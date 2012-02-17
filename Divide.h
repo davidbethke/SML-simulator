@@ -6,5 +6,6 @@ class Divide :
 public:
 	Divide(void);
 	~Divide(void);
+	virtual void opFunc();
 };
 

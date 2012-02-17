@@ -1,7 +1,6 @@
 #include "StdAfx.h"
 #include "SMLROM.h"
-#include "Read.h"
-#include "Write.h"
+
 
 SMLROM::SMLROM(int s):SMLBaseMem(s),v(s)
 {
@@ -12,7 +11,7 @@ SMLROM::SMLROM(int s):SMLBaseMem(s),v(s)
 SMLROM::~SMLROM(void)
 {
 }
-const SMLInstruction & SMLROM::getInstruction(int add) const
+SMLInstruction * SMLROM::getInstruction(int add) 
 {
 	if(isValidAddress(add))
 		return v[add];
@@ -24,8 +23,16 @@ const SMLInstruction & SMLROM::getInstruction(int add) const
 }
 void SMLROM::fillRom()
 {
+	//SMLInstruction arr[]={Add(),Branch(),BranchNeg(),BranchZero(),Divide(),Halt(),Load(),
+	//					Multiply(),Read(),Store(),Subtract(),Write()};
+	SMLInstruction * arr[]={(new Add),new Branch,new BranchNeg,new BranchZero,new Divide,new Halt,new Load,
+						new Multiply,new Read,new Store,new Subtract,new Write};
+	/*
 	Read read;
 	Write write;
 	v[read.getOp()]=read;
 	v[write.getOp()]=write;
+	*/
+	for(int i=0; i< NUM_INSTRUCT;++i)
+		v[arr[i]->getOp()]=arr[i];
 }
