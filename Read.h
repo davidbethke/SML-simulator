@@ -6,5 +6,6 @@ class Read :
 public:
 	Read(void);
 	~Read(void);
+	virtual void opFunc();
 };
 

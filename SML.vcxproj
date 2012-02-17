@@ -79,9 +79,18 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Add.h" />
+    <ClInclude Include="Branch.h" />
+    <ClInclude Include="BranchNeg.h" />
+    <ClInclude Include="BranchZero.h" />
+    <ClInclude Include="Divide.h" />
+    <ClInclude Include="Halt.h" />
+    <ClInclude Include="Load.h" />
     <ClInclude Include="MemTest.h" />
+    <ClInclude Include="Multiply.h" />
     <ClInclude Include="Read.h" />
     <ClInclude Include="RegisterTest.h" />
+    <ClInclude Include="ROMTest.h" />
     <ClInclude Include="SMLAccum.h" />
     <ClInclude Include="SMLBaseMem.h" />
     <ClInclude Include="SMLInstReg.h" />
@@ -90,13 +99,24 @@
     <ClInclude Include="SMLRegister.h" />
     <ClInclude Include="SMLROM.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Store.h" />
+    <ClInclude Include="Subtract.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Write.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Add.cpp" />
+    <ClCompile Include="Branch.cpp" />
+    <ClCompile Include="BranchNeg.cpp" />
+    <ClCompile Include="BranchZero.cpp" />
+    <ClCompile Include="Divide.cpp" />
+    <ClCompile Include="Halt.cpp" />
+    <ClCompile Include="Load.cpp" />
     <ClCompile Include="MemTest.cpp" />
+    <ClCompile Include="Multiply.cpp" />
     <ClCompile Include="Read.cpp" />
     <ClCompile Include="RegisterTest.cpp" />
+    <ClCompile Include="ROMTest.cpp" />
     <ClCompile Include="SML.cpp" />
     <ClCompile Include="SMLAccum.cpp" />
     <ClCompile Include="SMLBaseMem.cpp" />
@@ -109,6 +129,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Store.cpp" />
+    <ClCompile Include="Subtract.cpp" />
     <ClCompile Include="Write.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

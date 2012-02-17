@@ -1,11 +1,10 @@
 #pragma once
 #include "SMLInstruction.h"
-class Write :
+class Load :
 	public SMLInstruction
 {
 public:
-	Write(void);
-	~Write(void);
-	virtual void opFunc();
+	Load(void);
+	~Load(void);
 };
 

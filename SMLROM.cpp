@@ -1,9 +1,11 @@
 #include "StdAfx.h"
 #include "SMLROM.h"
-
+#include "Read.h"
+#include "Write.h"
 
 SMLROM::SMLROM(int s):SMLBaseMem(s),v(s)
 {
+	fillRom();
 }
 
 
@@ -22,5 +24,8 @@ const SMLInstruction & SMLROM::getInstruction(int add) const
 }
 void SMLROM::fillRom()
 {
-
+	Read read;
+	Write write;
+	v[read.getOp()]=read;
+	v[write.getOp()]=write;
 }

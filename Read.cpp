@@ -1,12 +1,17 @@
 #include "StdAfx.h"
 #include "Read.h"
+#include <iostream>
 
-
-Read::Read(void)
+using namespace std;
+Read::Read(void):SMLInstruction(10,10,99,0)
 {
 }
 
 
 Read::~Read(void)
 {
+}
+void Read::opFunc()
+{
+	cout << "I'm a Read"<<endl;
 }
