@@ -12,7 +12,7 @@ SMLInstruction::SMLInstruction(short int o, short int l,int d,int di):op(o),loc(
 SMLInstruction::~SMLInstruction(void)
 {
 }
-void SMLInstruction::opFunc(int val,const RegBank& rb)
+void SMLInstruction::opFunc(int val, RegBank& rb)
 {
 	cout <<"Undefined no op"<<endl;
 }

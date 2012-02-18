@@ -1,5 +1,5 @@
 #pragma once
-#include "smlinstruction.h"
+#include "SMLInstruction.h"
 class RegBank;
 class Add :
 	public SMLInstruction
@@ -7,6 +7,6 @@ class Add :
 public:
 	Add(void);
 	~Add(void);
-	virtual void opFunc(int,const RegBank&);
+	virtual void opFunc(int,RegBank&);
 };
 

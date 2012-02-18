@@ -11,7 +11,7 @@ public:
 	int read() const;
 	void write(int);
 	virtual void setInstruction(const SMLInstruction&);//TODO place holder for IR
-	virtual SMLInstruction getInstruction();//TODO place holder for IR
+	virtual SMLInstruction& getInstruction();//TODO place holder for IR
 private:
 	int value;
 	std::string name;

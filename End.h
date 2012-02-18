@@ -1,12 +1,12 @@
 #pragma once
 #include "smlinstruction.h"
 class RegBank;
-class Subtract :
+class End :
 	public SMLInstruction
 {
 public:
-	Subtract(void);
-	~Subtract(void);
+	End(void);
+	~End(void);
 	virtual void opFunc(int,RegBank&);
 };
 

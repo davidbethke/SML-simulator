@@ -30,7 +30,7 @@ void SMLRegister::setInstruction(const SMLInstruction& i)
 	//do nothing placeholder
 }
 
- SMLInstruction SMLRegister::getInstruction()
+ SMLInstruction& SMLRegister::getInstruction() //TODO returning local var shouldnt matter, just placeholder
  {
 	 SMLInstruction instruct;
 	 return instruct;

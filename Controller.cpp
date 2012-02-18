@@ -114,19 +114,29 @@ void Controller::updateIR(const SMLInstruction& instruct)
 }
 void Controller::execute() // execute instruction in the IR
 {
-	SMLInstruction theInstr;
+	SMLInstruction *theInstr;
 	theInstr=rom.getInstruction(regBank.readIR().getOp());
-	theInstr.opFunc(regBank.readIR().getLoc(),regBank);
+	theInstr->opFunc(regBank.readIR().getLoc(),regBank);
 }
 void Controller::run()
 {
 	SMLInstruction theInstr;
-	readProg();
-	while(regBank.readIR().getOp() !=99) //(( is the end))
+	//readProg();
+	/*
+	while(regBank.readIR().getOp() !=49) //(( is the end))
 	{
 		theInstr=decode();
 		updateIR(theInstr);
 		execute();
 		incIC();
 	}
+	*/
+	do{
+		theInstr=decode();
+		updateIR(theInstr);
+		execute();
+		incIC();
+	}while(regBank.readIR().getOp() !=49);
+
+	dumpMemory(page,regBank);//TODO test by duming mem
 }

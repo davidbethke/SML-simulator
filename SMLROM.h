@@ -10,13 +10,13 @@ public:
 	SMLROM(int=50);
 	~SMLROM(void);
 	//const SMLInstruction& getInstruction(int) const;
-	SMLInstruction getInstruction(int) ;
+	SMLInstruction* getInstruction(int) ;
 private:
 	//const int size;
 	void fillRom();
 	//std::vector<SMLInstruction> v;
 	std::vector<SMLInstruction*> v;
-	static const int NUM_INSTRUCT=12;
+	static const int NUM_INSTRUCT=13; // added End, now Baker's dozen
 	
 };
 

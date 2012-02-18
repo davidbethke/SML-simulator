@@ -120,6 +120,9 @@
     <ClInclude Include="Controller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="End.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -210,6 +213,9 @@
       <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="End.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

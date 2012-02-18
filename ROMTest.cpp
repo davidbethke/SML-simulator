@@ -13,7 +13,7 @@ ROMTest::~ROMTest(void)
 }
 TEST_F(ROMTest,DISABLED_romTest1)
 {
-	
+	/*
 	std::cout.rdbuf(oss.rdbuf());
 	SMLInstruction  myInstruct;
 	SMLInstruction myInstruct11;

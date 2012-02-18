@@ -87,6 +87,7 @@
     <ClInclude Include="Controller.h" />
     <ClInclude Include="Divide.h" />
     <ClInclude Include="DumpMemory.h" />
+    <ClInclude Include="End.h" />
     <ClInclude Include="Halt.h" />
     <ClInclude Include="InstructionCounter.h" />
     <ClInclude Include="InstructionList.h" />
@@ -121,6 +122,7 @@
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="Divide.cpp" />
     <ClCompile Include="DumpMemory.cpp" />
+    <ClCompile Include="End.cpp" />
     <ClCompile Include="Halt.cpp" />
     <ClCompile Include="InstructionCounter.cpp" />
     <ClCompile Include="InstructionRegister.cpp" />

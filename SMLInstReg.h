@@ -9,7 +9,8 @@ public:
 	~SMLInstReg(void);
 	//const SMLInstruction&  getInstruction() const;
 	virtual void setInstruction(const SMLInstruction&);
-	virtual SMLInstruction getInstruction();
+	virtual SMLInstruction& getInstruction();
+private:
 	SMLInstruction instruction;
 };
 

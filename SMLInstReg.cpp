@@ -20,7 +20,7 @@ void SMLInstReg::setInstruction(const SMLInstruction& i)
 {
 	instruction=i;
 }
-SMLInstruction SMLInstReg::getInstruction()
+SMLInstruction& SMLInstReg::getInstruction()
 {
 	return instruction;
 }

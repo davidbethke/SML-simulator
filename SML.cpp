@@ -5,7 +5,7 @@
 #include "Controller.h"
 
 #include "gtest/gtest.h"
-
+using namespace std;
 TEST(sample_test_case, sample_test)
 {
 	EXPECT_EQ(1, 1);
@@ -18,5 +18,8 @@ int main(int argc, char** argv)
 	std::getchar(); // keep console window open until Return keystroke
 	Controller myControl;
 	myControl.readProg();
+	std::getchar();
+	cout << "Press To Run"<<endl;
+	myControl.run();
 	std::getchar(); 
 }

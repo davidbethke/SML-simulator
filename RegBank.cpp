@@ -34,7 +34,7 @@ void RegBank::writeIR(const SMLInstruction& instr)
 {
 	v[0]->setInstruction(instr);
 }
-SMLInstruction RegBank::readIR()
+SMLInstruction& RegBank::readIR()
 {
 	return v[0]->getInstruction();
 }
