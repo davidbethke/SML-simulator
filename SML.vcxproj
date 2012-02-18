@@ -84,10 +84,12 @@
     <ClInclude Include="Branch.h" />
     <ClInclude Include="BranchNeg.h" />
     <ClInclude Include="BranchZero.h" />
+    <ClInclude Include="Controller.h" />
     <ClInclude Include="Divide.h" />
     <ClInclude Include="DumpMemory.h" />
     <ClInclude Include="Halt.h" />
     <ClInclude Include="InstructionCounter.h" />
+    <ClInclude Include="InstructionList.h" />
     <ClInclude Include="InstructionRegister.h" />
     <ClInclude Include="Load.h" />
     <ClInclude Include="MemTest.h" />
@@ -116,6 +118,7 @@
     <ClCompile Include="Branch.cpp" />
     <ClCompile Include="BranchNeg.cpp" />
     <ClCompile Include="BranchZero.cpp" />
+    <ClCompile Include="Controller.cpp" />
     <ClCompile Include="Divide.cpp" />
     <ClCompile Include="DumpMemory.cpp" />
     <ClCompile Include="Halt.cpp" />

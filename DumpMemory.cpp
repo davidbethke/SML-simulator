@@ -2,8 +2,9 @@
 #include "DumpMemory.h"
 #include <iostream>
 using namespace std;
-void dumpMemory(SMLBaseMem mem)
+void dumpMemory(const SMLPage& page, const RegBank& regBank)
 {
-	
+	cout <<regBank<<endl;
+	cout <<page<<endl;
 
 }
