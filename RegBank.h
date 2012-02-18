@@ -1,6 +1,8 @@
 #pragma once
 #include "SMLBaseMem.h"
 #include "SMLRegister.h"
+#include "SMLInstReg.h"
+#include "SMLInstruction.h"
 #include <vector>
 
 class RegBank:public SMLBaseMem
@@ -11,6 +13,7 @@ public:
 	~RegBank(void);
 	int read(int) const;
 	void write(int,int);
+	void writeIR(const SMLInstruction&);
 	
 private:
 	std::vector<SMLRegister *> v;

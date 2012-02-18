@@ -14,7 +14,6 @@ public:
 	~Controller(void);
 	void buildSim();
 	void readProg();
-	bool storeInstruction(std::string,int);
 	void run();
 private:
 	
@@ -24,13 +23,14 @@ private:
 	RegBank regBank;
 	int storeLoc;
 	void encodeMap();
-	void updateIR(SMLInstruction);
+	void updateIR(const SMLInstruction&);
 	SMLInstruction decode();
-	void execute();
+	bool storeInstruction(std::string,int);
 	int readIC();
 	void incIC();
 	bool isValidOpCode(int);
 	int fetch(int);
+	void execute();
 
 };
 

@@ -1,5 +1,6 @@
 #include "StdAfx.h"
 #include "SMLInstruction.h"
+#include "RegBank.h"
 #include <iostream>
 
 using namespace std;
@@ -11,7 +12,7 @@ SMLInstruction::SMLInstruction(short int o, short int l,int d,int di):op(o),loc(
 SMLInstruction::~SMLInstruction(void)
 {
 }
-void SMLInstruction::opFunc()
+void SMLInstruction::opFunc(int val,const RegBank& rb)
 {
 	cout <<"Undefined no op"<<endl;
 }

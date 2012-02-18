@@ -24,3 +24,15 @@ string SMLRegister::getName() const
 {
 	return name;
 }
+
+void SMLRegister::setInstruction(const SMLInstruction& i)
+{
+	//do nothing placeholder
+}
+
+ SMLInstruction SMLRegister::getInstruction()
+ {
+	 SMLInstruction instruct;
+	 return instruct;
+	 // do nothing placeholder
+ }

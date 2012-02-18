@@ -28,6 +28,10 @@ void RegBank::write(int add, int val)
 		accessError(add);
 
 }
+void RegBank::writeIR(const SMLInstruction& instr)
+{
+	v[0]->setInstruction(instr);
+}
 void RegBank::fillBank()
 {
 	/*

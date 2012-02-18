@@ -85,6 +85,7 @@ SMLInstruction Controller::decode()
 	else
 	{
 		cerr<<"Invalid Opcode:"<<opCode<<endl;
+		//return false;
 		exit(1);
 	}
 
@@ -107,6 +108,10 @@ void Controller::incIC()
 	int v=regBank.read(1);
 	regBank.write(1,v+1); // increment
 }
-void Controller::updateIR(SMLInstruction instruct)
+void Controller::updateIR(const SMLInstruction& instruct)
 {
-	regBank.
+	regBank.writeIR(instruct);
+}
+void Controller::execute() // execute instruction in the IR
+{
+}
