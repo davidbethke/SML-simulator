@@ -12,10 +12,10 @@ SMLROM::SMLROM(int s):SMLBaseMem(s),v(s)
 SMLROM::~SMLROM(void)
 {
 }
-SMLInstruction * SMLROM::getInstruction(int add) 
+SMLInstruction  SMLROM::getInstruction(int add) 
 {
 	if(isValidAddress(add))
-		return v[add];
+		return *(v[add]);
 	else
 	{
 		accessError(add);

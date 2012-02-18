@@ -27,7 +27,7 @@ void Controller::readProg()
 		while(inFile.good())
 		{
 			inFile>> opCode >> loc;
-			cout <<"OpCode:"<<opCode<<"Loc:"<<loc<<endl;
+			//cout <<"OpCode:"<<opCode<<"Loc:"<<loc<<endl;
 			if(enumResolver.count(opCode)) // key has been found
 			{
 				if(!storeInstruction(opCode,loc))
@@ -114,4 +114,19 @@ void Controller::updateIR(const SMLInstruction& instruct)
 }
 void Controller::execute() // execute instruction in the IR
 {
+	SMLInstruction theInstr;
+	theInstr=rom.getInstruction(regBank.readIR().getOp());
+	theInstr.opFunc(regBank.readIR().getLoc(),regBank);
+}
+void Controller::run()
+{
+	SMLInstruction theInstr;
+	readProg();
+	while(regBank.readIR().getOp() !=99) //(( is the end))
+	{
+		theInstr=decode();
+		updateIR(theInstr);
+		execute();
+		incIC();
+	}
 }

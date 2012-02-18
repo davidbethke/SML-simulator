@@ -12,6 +12,8 @@ RegBank::RegBank(void):SMLBaseMem(NUMREGS),v(NUMREGS)
 
 RegBank::~RegBank(void)
 {
+	for(int i=0; i<NUMREGS;++i)
+		delete v[i];
 }
 int RegBank::read(int add) const
 {
@@ -31,6 +33,10 @@ void RegBank::write(int add, int val)
 void RegBank::writeIR(const SMLInstruction& instr)
 {
 	v[0]->setInstruction(instr);
+}
+SMLInstruction RegBank::readIR()
+{
+	return v[0]->getInstruction();
 }
 void RegBank::fillBank()
 {

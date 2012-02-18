@@ -10,7 +10,7 @@ public:
 	SMLROM(int=50);
 	~SMLROM(void);
 	//const SMLInstruction& getInstruction(int) const;
-	SMLInstruction* getInstruction(int) ;
+	SMLInstruction getInstruction(int) ;
 private:
 	//const int size;
 	void fillRom();

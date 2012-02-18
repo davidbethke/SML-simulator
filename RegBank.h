@@ -14,6 +14,7 @@ public:
 	int read(int) const;
 	void write(int,int);
 	void writeIR(const SMLInstruction&);
+	SMLInstruction readIR();
 	
 private:
 	std::vector<SMLRegister *> v;

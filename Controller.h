@@ -12,7 +12,7 @@ class Controller
 public:
 	Controller(void);
 	~Controller(void);
-	void buildSim();
+	//void buildSim();
 	void readProg();
 	void run();
 private:
@@ -23,14 +23,16 @@ private:
 	RegBank regBank;
 	int storeLoc;
 	void encodeMap();
-	void updateIR(const SMLInstruction&);
 	SMLInstruction decode();
+	void updateIR(const SMLInstruction&);
+	void execute();
+	void incIC();
+	
 	bool storeInstruction(std::string,int);
 	int readIC();
-	void incIC();
 	bool isValidOpCode(int);
 	int fetch(int);
-	void execute();
+	
 
 };
 

@@ -13,7 +13,7 @@ ROMTest::~ROMTest(void)
 }
 TEST_F(ROMTest,DISABLED_romTest1)
 {
-	/*
+	
 	std::cout.rdbuf(oss.rdbuf());
 	SMLInstruction  myInstruct;
 	SMLInstruction myInstruct11;
@@ -36,6 +36,7 @@ TEST_F(ROMTest,DISABLED_romTest1)
 	EXPECT_EQ(10,myInstruct32.getLoc())<<"Fail getLoc  :op32";
 	EXPECT_EQ(0,myInstruct32.getData())<<"Fail getData :op32";
 	EXPECT_EQ(0,myInstruct32.getDir())<<"Fail getDir :op32";
+	/*
 	myInstruct.opFunc();
 	EXPECT_EQ("Im a Read",oss.str())<<"Fail opFunc";
 	oss.str("");
@@ -48,6 +49,7 @@ TEST_F(ROMTest,DISABLED_romTest1)
 }
 TEST_F(ROMTest,romTest2)
 {
+	/*
 	std::cout.rdbuf(oss.rdbuf());
 	SMLInstruction * myInstruct;
 	SMLInstruction * myInstruct11;
