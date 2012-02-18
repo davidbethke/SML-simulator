@@ -12,7 +12,7 @@ public:
 	SMLPage(int=100);
 	~SMLPage(void);
 	int  read(int) const;
-	void write(int,int);
+	bool write(int,int);
 	//int  getSize() const;
 private:
 	//const int size;

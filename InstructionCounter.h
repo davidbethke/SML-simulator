@@ -6,5 +6,7 @@ class InstructionCounter :
 public:
 	InstructionCounter(void);
 	~InstructionCounter(void);
+	void incIC();
+	
 };
 

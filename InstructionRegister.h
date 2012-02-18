@@ -6,5 +6,6 @@ class InstructionRegister :
 public:
 	InstructionRegister(void);
 	~InstructionRegister(void);
+	
 };
 

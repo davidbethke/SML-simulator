@@ -1,6 +1,7 @@
 #include "StdAfx.h"
 #include "SMLPage.h"
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 SMLPage::SMLPage(int s):SMLBaseMem(s),v(s)
@@ -21,26 +22,40 @@ int SMLPage::read(int add) const
 		exit(1);
 	}
 }
-void SMLPage::write(int add,int val)
+bool SMLPage::write(int add,int val)
 {
 	if(isValidAddress(add) && isValidData(val))
-		return v[add].write(val);
+	{
+		v[add].write(val);
+		return true;
+	}
+		
 	else
 	{
 		cerr<< "Invalid Write Attempted to Mem Loc:"<<add<<endl;
 		cerr<< "Program Halted"<<endl;
-		exit(1);
+		return false;
+		//exit(1);
 	}
 }
 std::ostream& operator<<(std::ostream& os,const SMLPage & page)
 {
-	int temp=1;
+	int temp=0;//TODO nicer dump output
+	//os<<temp; 
 	for(int i=0;i<page.getSize();++i)
 	{
+		
+		os.width(5);
+		os<<showpos;
+		os<<setfill('0')<<internal;
 		os<< page.read(i)<< " ";
 		temp++;
 			if(!(temp%10))
+			{
 				os << endl;
+				//os<noshowpos;
+				//os<<temp;
+			}
 	}
 	return os;
 }

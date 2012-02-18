@@ -47,7 +47,7 @@ void RegBank::fillBank()
  {
 	 os<<"REGISTERS:"<<endl;
 	 for(int i=0;i<regBank.NUMREGS;++i)
-		 os<<regBank.v[i]->getName()<<":\t\t\t"<<regBank.v[i]->read();
+		 os<<regBank.v[i]->getName()<<":\t\t\t"<<regBank.v[i]->read()<<endl;
 	 // print opcode and operand
 	 //os<<regBank.v[0]->  //TODO figure out how to access instruction private member of SMLRegister derived class SMLInstReg
 	 return os;
