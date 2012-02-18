@@ -2,6 +2,7 @@
 #include "SMLROM.h"
 
 
+
 SMLROM::SMLROM(int s):SMLBaseMem(s),v(s)
 {
 	fillRom();

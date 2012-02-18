@@ -2,14 +2,16 @@
 #include <vector>
 #include "SMLRegister.h"
 #include "SMLBaseMem.h"
+#include "DumpMemory.h"
 
 
-class SMLMem:public SMLBaseMem
+class SMLPage:public SMLBaseMem
 {
+	friend std::ostream& operator<<(std::ostream&,const SMLPage &);
 public:
-	SMLMem(int=100);
-	~SMLMem(void);
-	int  read(int);
+	SMLPage(int=100);
+	~SMLPage(void);
+	int  read(int) const;
 	void write(int,int);
 	//int  getSize() const;
 private:
@@ -19,4 +21,5 @@ private:
 	//bool isValidData(int);
 	
 };
+
 

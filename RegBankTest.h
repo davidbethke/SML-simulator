@@ -1,7 +1,7 @@
 #pragma once
 #include "d:\users\dave\documents\visual studio 2010\projects\gtest\include\gtest\gtest.h"
-#include "SMLPage.h"
-class MemTest :
+#include "RegBank.h"
+class RegBankTest :
 	public ::testing::Test
 {
 protected:
@@ -13,11 +13,11 @@ protected:
 	{
 		std::cout.rdbuf(p_cout_streambuf); // restore
 	}
-	SMLPage mem;
+	RegBank regBank;
 	std::ostringstream oss;
 	std::streambuf* p_cout_streambuf;
 public:
-	MemTest(void);
-	~MemTest(void);
+	RegBankTest(void);
+	~RegBankTest(void);
 };
 

@@ -1,8 +1,10 @@
 #include "StdAfx.h"
 #include "SMLRegister.h"
+#include <iostream>
 
 
-SMLRegister::SMLRegister(int v):value(v)
+using namespace std;
+SMLRegister::SMLRegister(std::string n,int v):value(v),name(n)
 {
 }
 
@@ -10,11 +12,15 @@ SMLRegister::SMLRegister(int v):value(v)
 SMLRegister::~SMLRegister(void)
 {
 }
-int SMLRegister::read()
+int SMLRegister::read() const
 {
 	return value;
 }
 void SMLRegister::write(int v)
 {
 	value=v;
+}
+string SMLRegister::getName() const
+{
+	return name;
 }

@@ -2,7 +2,7 @@
 #include "SMLAccum.h"
 
 
-SMLAccum::SMLAccum(void)
+SMLAccum::SMLAccum(void):SMLRegister("Accumulator")
 {
 }
 

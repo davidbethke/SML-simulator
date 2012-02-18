@@ -1,12 +1,16 @@
+#include <string>
 #pragma once
 class SMLRegister
+
 {
 public:
-	SMLRegister(int=0);
+	SMLRegister(std::string="GeneralPurpose",int=0);
 	virtual ~SMLRegister(void);
-	int read();
+	std::string getName() const;
+	int read() const;
 	void write(int);
 private:
 	int value;
+	std::string name;
 };
 
