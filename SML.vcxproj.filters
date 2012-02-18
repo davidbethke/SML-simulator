@@ -123,6 +123,15 @@
     <ClInclude Include="End.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PageInstruction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Load0.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Store0.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -216,6 +225,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="End.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PageInstruction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Load0.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Store0.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

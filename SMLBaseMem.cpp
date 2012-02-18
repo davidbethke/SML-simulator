@@ -24,7 +24,7 @@ bool SMLBaseMem::isValidAddress(int add) const
 }
 bool SMLBaseMem::isValidData(int dat) const
 {
-	if(dat>-5000 && dat <5000)
+	if(dat>-99999 && dat <99999)
 		return true;
 	else
 		return false;

@@ -4,7 +4,7 @@
 #include <iostream>
 
 using namespace std;
-End::End(void):SMLInstruction(49)
+End::End(void):SMLInstruction(99)
 {
 }
 

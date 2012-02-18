@@ -51,6 +51,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>D:\Users\dave\Documents\Visual Studio 2010\Projects\GTest\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/wd4482 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -93,9 +94,11 @@
     <ClInclude Include="InstructionList.h" />
     <ClInclude Include="InstructionRegister.h" />
     <ClInclude Include="Load.h" />
+    <ClInclude Include="Load0.h" />
     <ClInclude Include="MemTest.h" />
     <ClInclude Include="Multiply.h" />
     <ClInclude Include="NamedRegisters.h" />
+    <ClInclude Include="PageInstruction.h" />
     <ClInclude Include="Read.h" />
     <ClInclude Include="RegBank.h" />
     <ClInclude Include="RegBankTest.h" />
@@ -110,6 +113,7 @@
     <ClInclude Include="SMLROM.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Store.h" />
+    <ClInclude Include="Store0.h" />
     <ClInclude Include="Subtract.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Write.h" />
@@ -127,8 +131,10 @@
     <ClCompile Include="InstructionCounter.cpp" />
     <ClCompile Include="InstructionRegister.cpp" />
     <ClCompile Include="Load.cpp" />
+    <ClCompile Include="Load0.cpp" />
     <ClCompile Include="MemTest.cpp" />
     <ClCompile Include="Multiply.cpp" />
+    <ClCompile Include="PageInstruction.cpp" />
     <ClCompile Include="Read.cpp" />
     <ClCompile Include="RegBank.cpp" />
     <ClCompile Include="RegBankTest.cpp" />
@@ -147,6 +153,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Store.cpp" />
+    <ClCompile Include="Store0.cpp" />
     <ClCompile Include="Subtract.cpp" />
     <ClCompile Include="Write.cpp" />
   </ItemGroup>

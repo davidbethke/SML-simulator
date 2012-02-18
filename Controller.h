@@ -23,6 +23,7 @@ private:
 	SMLROM rom;
 	RegBank regBank;
 	int storeLoc;
+	SMLInstruction *theInstr;
 	void encodeMap();
 	SMLInstruction decode();
 	void updateIR(const SMLInstruction&);
@@ -34,6 +35,8 @@ private:
 	bool isValidOpCode(int);
 	int fetch(int);
 	bool storeData(int, int);
+	bool isBranch(short int);
+	bool isStore(short int);
 	
 
 };

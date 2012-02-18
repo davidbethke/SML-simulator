@@ -1,13 +1,13 @@
 #pragma once
-#include "SMLInstruction.h"
+#include "smlinstruction.h"
 class RegBank;
 class SMLPage;
-class Write :
+class Store0 :
 	public SMLInstruction
 {
 public:
-	Write(void);
-	~Write(void);
+	Store0(void);
+	~Store0(void);
 	virtual void opFunc(int,SMLPage&,int,RegBank&);
 };
 

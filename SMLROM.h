@@ -7,7 +7,7 @@ class SMLROM:public SMLBaseMem
 {
 	
 public:
-	SMLROM(int=50);
+	SMLROM(int=100); //END is 99
 	~SMLROM(void);
 	//const SMLInstruction& getInstruction(int) const;
 	SMLInstruction* getInstruction(int) ;
@@ -16,7 +16,7 @@ private:
 	void fillRom();
 	//std::vector<SMLInstruction> v;
 	std::vector<SMLInstruction*> v;
-	static const int NUM_INSTRUCT=13; // added End, now Baker's dozen
+	static const int NUM_INSTRUCT=15; // added End, now Baker's dozen,load0, store0
 	
 };
 

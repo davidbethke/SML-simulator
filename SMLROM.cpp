@@ -27,7 +27,7 @@ void SMLROM::fillRom()
 	//SMLInstruction arr[]={Add(),Branch(),BranchNeg(),BranchZero(),Divide(),Halt(),Load(),
 	//					Multiply(),Read(),Store(),Subtract(),Write()};
 	SMLInstruction * arr[]={(new Add),new Branch,new BranchNeg,new BranchZero,new Divide,new Halt,new Load,
-						new Multiply,new Read,new Store,new Subtract,new Write,new End};
+						new Multiply,new Read,new Store,new Subtract,new Write,new End,new Load0, new Store0};
 	/*
 	Read read;
 	Write write;

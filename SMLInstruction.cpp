@@ -1,6 +1,7 @@
 #include "StdAfx.h"
 #include "SMLInstruction.h"
 #include "RegBank.h"
+#include "SMLPage.h"
 #include <iostream>
 
 using namespace std;
@@ -15,6 +16,10 @@ SMLInstruction::~SMLInstruction(void)
 void SMLInstruction::opFunc(int val, RegBank& rb)
 {
 	cout <<"Undefined no op"<<endl;
+}
+void SMLInstruction::opFunc(int l,SMLPage&,int val, RegBank& rb)
+{
+	cout <<"Undefined no op 4 params"<<endl;
 }
 short int SMLInstruction::getOp() const
 {

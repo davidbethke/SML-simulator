@@ -11,3 +11,5 @@
 #include "Subtract.h"
 #include "Write.h"
 #include "End.h"
+#include "Load0.h"
+#include "Store0.h"

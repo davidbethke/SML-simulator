@@ -1,13 +1,13 @@
 #pragma once
 #include "smlinstruction.h"
-class RegBank;
 class SMLPage;
-class Branch :
+class RegBank;
+class PageInstruction :
 	public SMLInstruction
 {
 public:
-	Branch(void);
-	~Branch(void);
+	PageInstruction(int =21); //HACK default to Store instru
+	~PageInstruction(void);
 	virtual void opFunc(int,SMLPage&,int,RegBank&);
 };
 

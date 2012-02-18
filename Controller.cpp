@@ -14,6 +14,7 @@ Controller::Controller(void):enumResolver(),page(),rom(),regBank(),storeLoc(0)
 
 Controller::~Controller(void)
 {
+	delete theInstr;//TODO If Multiple Controllers are allowed, need Copy Constructor, assignment op
 }
 void Controller::initProg()
 {
@@ -70,6 +71,8 @@ void Controller::encodeMap()
 	enumResolver["WRITE"]=Instruction::OpCodes::WRITE;
 	enumResolver["LOAD"]=Instruction::OpCodes::LOAD;
 	enumResolver["STORE"]=Instruction::OpCodes::STORE;
+	enumResolver["LOAD0"]=Instruction::OpCodes::LOAD0;
+	enumResolver["STORE0"]=Instruction::OpCodes::STORE0;
 	enumResolver["ADD"]=Instruction::OpCodes::ADD;
 	enumResolver["SUB"]=Instruction::OpCodes::SUB;
 	enumResolver["DIV"]=Instruction::OpCodes::DIV;
@@ -116,7 +119,7 @@ SMLInstruction Controller::decode()
 	{
 		int operand=fetch(loc);
 		SMLInstruction instruct(opCode,loc,operand);// create instruction
-		cout <<"Val written to instruct"<<operand<<endl;//HACK
+		//cout <<"Val written to instruct"<<operand<<endl;//HACK
 		return instruct;
 	}
 	else
@@ -153,16 +156,35 @@ void Controller::updateIR(const SMLInstruction& instruct)
 }
 void Controller::execute() // execute instruction in the IR
 {
-	SMLInstruction *theInstr;
+	//SMLInstruction *theInstr;
+	//theInstru used to get correct oPFunc from ROM,loc,val are zero
+	//need actual vals from IR
+	short int myOp, myLoc;
+	int myDat;
+	myOp=regBank.readIR().getOp();
+	myLoc=regBank.readIR().getLoc();
+	myDat=regBank.readIR().getData();
 	theInstr=rom.getInstruction(regBank.readIR().getOp());
-	theInstr->opFunc(regBank.readIR().getData(),regBank);
+	//for PageInstructions
+	if(isStore(myOp) || isBranch(myOp)) //Store, Branch Instr
+	{
+		cout <<endl;
+		cout <<"Store Instru detected"<<endl; //HACK
+
+		theInstr->opFunc(myLoc,page,myDat,regBank);
+	}
+	else if(myOp==Instruction::END)
+		cout << "End of Program"<<endl;
+		//do nothing
+	else
+		theInstr->opFunc(myDat,regBank);
 }
 void Controller::run()
 {
-	SMLInstruction theInstr;
+	SMLInstruction theInstr; //TODO Check 2 theInstr one a pointer one a local var
 	//readProg();
 	/*
-	while(regBank.readIR().getOp() !=49) //(( is the end))
+	while(regBank.readIR().getOp() !=99) //(( is the end))
 	{
 		theInstr=decode();
 		updateIR(theInstr);
@@ -174,8 +196,26 @@ void Controller::run()
 		theInstr=decode();
 		updateIR(theInstr);
 		execute();
-		incIC();
-	}while(regBank.readIR().getOp() !=49);
+		// only inc if not a branch instruction
+		if(!isBranch(theInstr.getOp()))
+			incIC();
+
+	}while(regBank.readIR().getOp() !=Instruction::END);
 
 	dumpMemory(page,regBank);//TODO test by duming mem
+}
+bool Controller::isBranch(short int op)
+{
+	if(op == Instruction::BRANCH || op==Instruction::BRANCHNEG
+		|| op == Instruction::BRANCHZERO)
+		return true;
+	else
+		return false;
+}
+bool Controller::isStore(short int op)
+{
+	if(op== Instruction::STORE || op == Instruction::STORE0)
+		return true;
+	else
+		return false;
 }

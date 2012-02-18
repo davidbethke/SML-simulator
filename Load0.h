@@ -1,12 +1,12 @@
 #pragma once
 #include "smlinstruction.h"
 class RegBank;
-class Divide :
+class Load0 :
 	public SMLInstruction
 {
 public:
-	Divide(void);
-	~Divide(void);
-	virtual void opFunc(int, RegBank&);
+	Load0(void);
+	~Load0(void);
+	virtual void opFunc(int,RegBank&);
 };
 
