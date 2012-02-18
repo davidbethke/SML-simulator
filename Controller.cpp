@@ -8,18 +8,43 @@
 using namespace std;
 Controller::Controller(void):enumResolver(),page(),rom(),regBank(),storeLoc(0)
 {
-	
+	encodeMap();
 }
 
 
 Controller::~Controller(void)
 {
 }
+void Controller::initProg()
+{
+	//only supports Read instruction
+	int  loc, val;
+	std::string opCode;
+	//encodeMap();
+	ifstream inFile;
+	inFile.open("D:\\Users\\dave\\Documents\\initProg.txt");
+	if (inFile.is_open())
+	{
+		while(inFile.good())
+		{
+			inFile>> opCode >> loc>> val;
+			//cout <<"OpCode:"<<opCode<<"Loc:"<<loc<<"Val:"<<val<<endl;
+			if(enumResolver.count(opCode)) // key has been found
+			{
+				if(!storeData(loc,val))
+					cout<< "Error storing Data:"<<opCode<<" at location:"<<loc<<endl;
+			}
+		}
+	}
+	inFile.close();
+	cout << "InitProg Result"<<endl;
+	dumpMemory(page,regBank);//TODO test by duming mem
+}
 void Controller::readProg()
 {
 	int  loc;
 	std::string opCode;
-	encodeMap();
+	//encodeMap();
 	ifstream inFile;
 	inFile.open("D:\\Users\\dave\\Documents\\myProg.txt");
 	if (inFile.is_open())
@@ -36,6 +61,7 @@ void Controller::readProg()
 		}
 	}
 	inFile.close();
+	cout <<"ReadProg Result"<<endl;
 	dumpMemory(page,regBank);//TODO test by duming mem
 }
 void Controller::encodeMap()
@@ -53,6 +79,16 @@ void Controller::encodeMap()
 	enumResolver["BRANCHZERO"]=Instruction::OpCodes::BRANCHZERO;
 	enumResolver["HALT"]=Instruction::OpCodes::HALT;
 	enumResolver["END"]=Instruction::OpCodes::END;
+}
+bool Controller::storeData(int loc, int val)
+{
+	bool result=false;
+		if(loc<page.getSize())
+		{
+			result=page.write(loc,val);
+		}
+		return result;
+
 }
 bool Controller::storeInstruction(string instr,int loc)
 {
@@ -80,6 +116,7 @@ SMLInstruction Controller::decode()
 	{
 		int operand=fetch(loc);
 		SMLInstruction instruct(opCode,loc,operand);// create instruction
+		cout <<"Val written to instruct"<<operand<<endl;//HACK
 		return instruct;
 	}
 	else
@@ -110,13 +147,15 @@ void Controller::incIC()
 }
 void Controller::updateIR(const SMLInstruction& instruct)
 {
+	
 	regBank.writeIR(instruct);
+	cout <<"Val written to IR"<<regBank.readIR().getData();
 }
 void Controller::execute() // execute instruction in the IR
 {
 	SMLInstruction *theInstr;
 	theInstr=rom.getInstruction(regBank.readIR().getOp());
-	theInstr->opFunc(regBank.readIR().getLoc(),regBank);
+	theInstr->opFunc(regBank.readIR().getData(),regBank);
 }
 void Controller::run()
 {

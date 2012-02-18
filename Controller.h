@@ -14,6 +14,7 @@ public:
 	~Controller(void);
 	//void buildSim();
 	void readProg();
+	void initProg();
 	void run();
 private:
 	
@@ -32,6 +33,7 @@ private:
 	int readIC();
 	bool isValidOpCode(int);
 	int fetch(int);
+	bool storeData(int, int);
 	
 
 };

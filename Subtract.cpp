@@ -13,5 +13,5 @@ Subtract::~Subtract(void)
 void Subtract::opFunc(int val,RegBank& regBank)
 {
 	int accumVal=regBank.read(2);
-	regBank.write(2,accumVal+val-1); //TODO Hack to check functionality
+	regBank.write(2,accumVal); //DONE to check functionality
 }

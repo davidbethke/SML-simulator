@@ -19,6 +19,8 @@ int main(int argc, char** argv)
 	Controller myControl;
 	myControl.readProg();
 	std::getchar();
+	myControl.initProg();
+	std::getchar();
 	cout << "Press To Run"<<endl;
 	myControl.run();
 	std::getchar(); 

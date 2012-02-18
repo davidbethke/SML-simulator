@@ -4,7 +4,7 @@
 
 
 using namespace std;
-SMLRegister::SMLRegister(std::string n,int v):value(v),name(n)
+SMLRegister::SMLRegister(std::string n,int v):name(n),value(v)
 {
 }
 
